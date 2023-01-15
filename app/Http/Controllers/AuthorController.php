@@ -46,4 +46,9 @@ class AuthorController extends Controller
         $author->delete();
         return redirect('/authors');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
