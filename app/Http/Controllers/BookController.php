@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Http\Requests\BookRequest;
@@ -18,13 +19,15 @@ class BookController extends Controller
     public function create()
     {
         $authors = Author::orderBy('name', 'asc')->get();
-        return view('book.form', ['title' => 'Pievienot grāmatu', 'book' => new Book(), 'authors' => $authors,]);
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('book.form', ['title' => 'Pievienot grāmatu', 'book' => new Book(), 'authors' => $authors, 'categories' => $categories]);
     }
 
     public function update(Book $book)
     {
         $authors = Author::orderBy('name', 'asc')->get();
-        return view('book.form', ['title' => 'Rediģēt grāmatu', 'book' => $book, 'authors' => $authors,]);
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('book.form', ['title' => 'Rediģēt grāmatu', 'book' => $book, 'authors' => $authors, 'categories' => $categories]);
     }
 
     private function saveBookData(Book $book, BookRequest $request)
@@ -51,7 +54,7 @@ class BookController extends Controller
     public function patch(Book $book, BookRequest $request)
     {
         $this->saveBookData($book, $request);
-        return redirect('/books/update/' . $book->id);
+        return redirect('/books');
     }
 
     public function delete(Book $book)

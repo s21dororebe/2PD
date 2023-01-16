@@ -9,6 +9,7 @@ class AuthorizationController extends Controller
 {
     public function login()
     {
+//        echo 'mans_lietotāja_vārds : <input value="' . \Illuminate\Support\Facades\Hash::make('123') . '">'; exit();
         return view('authorization.login', ['title' => 'Pieslēgties']);
     }
 

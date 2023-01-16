@@ -9,14 +9,25 @@
                                                                                              value="{{ old('name', $book->name) }}"
                                                                                              class="form-control @error('name') is-invalid @enderror"> @error('name')
             <p class="invalid-feedback">{{ $errors->first('name') }}</p> @enderror </div>
-        <div class="mb-3"><label for="book-author" class="form-label">Autors</label> <select id="book-author"
-                                                                                             name="author_id"
-                                                                                             class="form-select @error('author_id') is-invalid @enderror">
+
+        <div class="mb-3"><label for="book-author" class="form-label">Autors</label>
+            <select id="book-author" name="author_id" class="form-select @error('author_id') is-invalid @enderror">
                 <option value="">Norādiet autoru!</option> @foreach($authors as $author)
                     <option value="{{ $author->id }}"
                             @if ($author->id == old('author_id', $book->author->id ?? false)) selected @endif >{{ $author->name }}</option>
-                @endforeach </select> @error('author_id') <p
-                class="invalid-feedback">{{ $errors->first('author_id') }}</p> @enderror </div>
+                @endforeach </select> @error('author_id')
+            <p class="invalid-feedback">{{ $errors->first('author_id') }}</p> @enderror
+        </div>
+
+        <div class="mb-3"><label for="category-name" class="form-label">Kategorijas</label>
+            <select id="category-name" name="category_id" class="form-select @error('category_id') is-invalid @enderror">
+                <option value="">Norādiet kategoriju!</option> @foreach($categories as $category)
+                    <option value="{{ $category->id }}"
+                            @if ($category->id == old('category_id', $book->category->id ?? false)) selected @endif >{{ $category->name }}</option>
+                @endforeach </select> @error('category_id')
+            <p class="invalid-feedback">{{ $errors->first('category_id') }}</p> @enderror
+        </div>
+
         <div class="mb-3"><label for="book-description" class="form-label">Apraksts</label>
             <textarea id="book-description" name="description"
                       class="form-control @error('description') is-invalid @enderror">{{ old('description', $book->description) }}</textarea> @error('description')

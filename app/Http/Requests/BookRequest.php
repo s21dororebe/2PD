@@ -13,7 +13,7 @@ class BookRequest extends FormRequest
 
     public function rules()
     {
-        return ['name' => 'required|min:3|max:256', 'author_id' => 'required', 'description' => 'nullable', 'price' => 'nullable|numeric', 'year' => 'numeric', 'image' => 'nullable|image', 'display' => 'nullable'];
+        return ['name' => 'required|min:3|max:256', 'author_id' => 'required', 'category_id' => 'required', 'description' => 'nullable', 'price' => 'nullable|numeric', 'year' => 'numeric', 'image' => 'nullable|image', 'display' => 'nullable'];
     }
 
     public function messages()
