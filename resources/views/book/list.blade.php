@@ -16,7 +16,11 @@
                 <tr>
                     <td>{{ $book->id }}</td>
                     <td>{{ $book->name }}</td>
-                    <td>{{ $book->author->name }}</td>
+                    @if($book->author == null)
+                        <td>Autors nav atrasts</td>
+                    @else
+                        <td>{{ $book->author->name }}</td>
+                    @endif
                     <td>{{ $book->year }}</td>
                     <td>&euro; {{ number_format($book->price, 2, '.') }}</td>
                     <td>{!! $book->display ? '&#10004;&#65039;' : '&#10060;' !!}</td>
