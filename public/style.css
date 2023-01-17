@@ -1,0 +1,24 @@
+.autora_vards {
+    float: left;
+    width: 80%;
+}
+.icons_to_use {
+    float: right;
+    width: 10%;
+}
+
+.container_autori {
+    padding-bottom: 3rem;
+}
+
+.btn-link {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: #0000EE;
+    padding: 0;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: inherit;
+}
