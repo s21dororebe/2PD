@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorizationController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,9 @@ Route::post('/categories/put', [CategoriesController::class, 'put']);
 Route::get('/categories/update/{category}', [CategoriesController::class, 'update']);
 Route::post('/categories/patch/{category}', [CategoriesController::class, 'patch']);
 Route::post('/categories/delete/{category}', [CategoriesController::class, 'delete']);
+// Data routes
+Route::prefix('data')->group(function () {
+    Route::get('/get-top-books', [DataController::class, 'getTopBooks']);
+    Route::get('/get-book/{book}', [DataController::class, 'getBook']);
+    Route::get('/get-related-books/{book}', [DataController::class, 'getRelatedBooks']);
+});
