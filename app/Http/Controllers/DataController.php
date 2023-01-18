@@ -19,6 +19,7 @@ class DataController extends Controller
             ->get();
         return $books;
     }
+
     // Metode atgriež izvēlēto Book ierakstu, ja tas ir publicēts
     public function getBook(Book $book)
     {

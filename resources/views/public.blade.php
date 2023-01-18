@@ -14,10 +14,13 @@
 </header>
 <main class="container">
     <div id="root"></div>
-    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80" alt="aly">
 </main>
 <footer class="mt-5 py-5">
-    <div class="container"> Rebeka Tretjaka, VeA, 2022</div>
+    <div class="container">
+        Rebeka Tretjaka, VeA, 2022
+        <a href="/login" style="margin-left: 79rem;">Admin</a>
+    </div>
+
 </footer>
 <script src="{{ asset('/js/app.js') }}"></script>
 </body>

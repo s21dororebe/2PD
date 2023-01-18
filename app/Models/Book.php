@@ -27,7 +27,7 @@ class Book extends Model
             'id' => intval($this->id),
             'name' => $this->name,
             'author' => $this->author->name,
-            'category' => ($this->category() ? $this->category()->name : ''),
+            'category' => $this->category->name,
             'description' => $this->description,
             'price' => number_format($this->price, 2),
             'year' => intval($this->year),
