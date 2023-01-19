@@ -22,7 +22,7 @@
                         <span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="/">Sākumlapa</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/">Publiskā lapa</a></li>
                             @if(Auth::check())
                                 <li class="nav-item"><a class="nav-link" href="/authors">Autori</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/books">Grāmatas</a></li>
