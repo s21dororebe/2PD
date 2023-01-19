@@ -26,7 +26,7 @@
 .books-img {
     margin-top: 1.5rem;
     object-fit: cover;
-    height: 15rem;
+    height: 27rem;
     width: 15rem;
 }
 .card-text {
@@ -121,3 +121,4 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
+

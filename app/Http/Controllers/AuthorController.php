@@ -21,9 +21,10 @@ class AuthorController extends Controller
 
     public function put(Request $request)
     {
-        $validatedData = $request->validate(['name' => 'required',]);
+        $validatedData = $request->validate(['name' => 'required', 'description' => 'nullable']);
         $author = new Author();
         $author->name = $validatedData['name'];
+        $author->description = $validatedData['description'];
         $author->save();
         return redirect('/authors');
     }
@@ -35,8 +36,9 @@ class AuthorController extends Controller
 
     public function patch(Author $author, Request $request)
     {
-        $validatedData = $request->validate(['name' => 'required',]);
+        $validatedData = $request->validate(['name' => 'required', 'description' => 'nullable']);
         $author->name = $validatedData['name'];
+        $author->description = $validatedData['description'];
         $author->save();
         return redirect('/authors');
     }

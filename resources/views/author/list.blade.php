@@ -12,7 +12,7 @@
                         </div>
                         <div class="align-items-center pb-3 mb-3 border-bottom">
                             <div class="align-items-center d-flex text-dark">
-                                <a class="autora_vards text-dark text-decoration-none" href="/"><h3
+                                <a class="autora_vards text-dark text-decoration-none" href="#"><h3
                                         class="fs-2">{{ $author->name }}</h3></a>
                                 <a href="/authors/update/{{ $author->id }}" class="icons_to_use">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -34,8 +34,7 @@
                                 </form>
                             </div>
                         </div>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                            sentence and probably just keep going until we run out of words.</p>
+                        <p class="card-text text-justify">{{ $author->description }}</p>
                     </div>
                 @endforeach
             </div>

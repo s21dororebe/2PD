@@ -32,13 +32,7 @@
             <textarea id="book-description" name="description"
                       class="form-control @error('description') is-invalid @enderror">{{ old('description', $book->description) }}</textarea> @error('description')
             <p class="invalid-feedback">{{ $errors->first('description') }}</p> @enderror </div>
-        <div class="mb-3"><label for="book-year" class="form-label">Izdošanas gads</label> <input type="number"
-                                                                                                  max="{{ date('Y') + 1 }}"
-                                                                                                  step="1"
-                                                                                                  id="book-year"
-                                                                                                  name="year"
-                                                                                                  value="{{ old('year', $book->year) }}"
-                                                                                                  class="form-control @error('year') is-invalid @enderror"> @error('year')
+        <div class="mb-3"><label for="book-year" class="form-label">Izdošanas gads</label> <input type="number" max="{{ date('Y') + 1 }}" step="1" id="book-year" name="year" value="{{ old('year', $book->year) }}" class="form-control @error('year') is-invalid @enderror"> @error('year')
             <p class="invalid-feedback">{{ $errors->first('year') }}</p> @enderror </div>
         <div class="mb-3"><label for="book-price" class="form-label">Cena</label> <input type="number" min="0.00"
                                                                                          step="0.01" lang="en"

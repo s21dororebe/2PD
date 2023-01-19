@@ -7,6 +7,10 @@
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="author-name"
                    name="name" value="{{ old('name', $author->name) }}"> @error('name')
             <p class="invalid-feedback">{{ $errors->first('name') }}</p> @enderror </div>
+        <div class="mb-3"><label for="author-description" class="form-label">Apraksts</label>
+            <textarea id="author-description" name="description"
+                      class="form-control @error('description') is-invalid @enderror">{{ old('description', $author->description) }}</textarea> @error('description')
+            <p class="invalid-feedback">{{ $errors->first('description') }}</p> @enderror </div>
         <button type="submit" class="btn btn-primary">Pievienot</button>
     </form>
 @endsection

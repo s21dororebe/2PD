@@ -16,13 +16,12 @@
                         <div class="books-details font-weight-light align-items-center d-flex">
                             @if($book->author == null)
                                 <p class="books-author-text">Autors nav atrasts</p>
-                                <p class="books-year">{{ $book->year }}</p>
                             @else
                                 <p class="books-author-text">{{ $book->author->name }}</p>
-                                <p class="books-year">{{ $book->year }}</p>
                             @endif
+                            <p class="books-year">{{ $book->year }}</p>
                         </div>
-                        <p class="font-weight-light"></p>
+                        {{--                        <p class="font-weight-light"></p>--}}
                         <p class="card-text text-justify">{{ $book->description }}</p>
                         <div class="button-group align-items-center d-flex card-actions">
                             <a href="/books/update/{{ $book->id }}" class="books_btns btn btn-outline-primary btn-sm">Labot</a>

@@ -18,9 +18,10 @@ class CategoriesController extends Controller
     }
     public function put(Request $request)
     {
-        $validatedData = $request->validate(['name' => 'required',]);
+        $validatedData = $request->validate(['name' => 'required', 'description' => 'nullable']);
         $category = new Category();
         $category->name = $validatedData['name'];
+        $category->description = $validatedData['description'];
         $category->save();
         return redirect('/categories');
     }
@@ -32,8 +33,9 @@ class CategoriesController extends Controller
 
     public function patch(Category $category, Request $request)
     {
-        $validatedData = $request->validate(['name' => 'required',]);
+        $validatedData = $request->validate(['name' => 'required', 'description' => 'nullable']);
         $category->name = $validatedData['name'];
+        $category->description = $validatedData['description'];
         $category->save();
         return redirect('/categories');
     }
